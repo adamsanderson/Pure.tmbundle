@@ -32,7 +32,13 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(do|if|then|else)\b</string>
+			<string>\b(let|def|where|when|using)\b</string>
+			<key>name</key>
+			<string>keyword.pure</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b(if|then|else|otherwise)\b</string>
 			<key>name</key>
 			<string>keyword.control.pure</string>
 		</dict>
@@ -141,7 +147,7 @@
 			<key>comment</key>
 			<string>My grasp of pure is not very strong, but I think it supports the same operators as Haskell</string>
 			<key>match</key>
-			<string>[|!%$?~+:\-.=&lt;/&gt;\\]+</string>
+			<string>[|!%$?~+:\-.=&lt;/&gt;\\\*]+</string>
 			<key>name</key>
 			<string>keyword.operator.pure</string>
 		</dict>
