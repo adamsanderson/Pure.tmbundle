@@ -17,7 +17,7 @@ possible_files.each do |path|
   open(path,'r') do |io|
     ss = StringScanner.new(io.read)
     if ss.scan_until(/^\s+(\.\.\s+_#{escaped_word}:)\s*$/)
-      puts word
+      puts "#{word} (#{path}:#{2 + ss.pre_match.count("\n")})"
       lines = (ss.scan_until(/\n\s*\n\s*(^\s+.. _)|(\*\/)/)).sub(/\n.+$/,'').split($/)
       puts lines[0...(lines.length-1)]
       found = true
