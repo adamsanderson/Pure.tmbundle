@@ -36,7 +36,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(let|def|where|when|with|extern|const|end)\b</string>
+			<string>\b(let|def|where|when|with|const|end)\b</string>
 			<key>name</key>
 			<string>keyword.pure</string>
 		</dict>
@@ -60,7 +60,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(const|private|public|extern|namespace|nullary)\b</string>
+			<string>\b(const|private|public|namespace|extern|nullary)\b</string>
 			<key>name</key>
 			<string>storage.modifier.pure</string>
 		</dict>
