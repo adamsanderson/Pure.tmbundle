@@ -1,11 +1,13 @@
+This is a TextMate bundle for the Pure language (http://code.google.com/p/pure-lang/).
+
 Beware of the following:
 1. I do not really know Pure
 2. The syntax is not exactly right, I am taking some liberties to make it look good...
+3. I assume pure is installed via MacPorts in /opt/local/lib/pure
 
 The prior disclaimer aside, this should support a simple syntax for Pure,
 and a couple of useful commands. The help function (ctrl-h) is actually pretty 
-good, give it a try on anything documented
-in the pure library.
+good, give it a try on anything documented in the pure library.
 
 Forks and contributions would be greatly appreciated.
 
