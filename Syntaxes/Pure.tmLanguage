@@ -26,13 +26,13 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\binfix[lr]?\b</string>
+			<string>\b(pre|in|post)fix[lr]?\b</string>
 			<key>name</key>
 			<string>keyword.operator.pure</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(let|def|where|when|using|extern|const)\b</string>
+			<string>\b(let|def|where|when|with|extern|const|end)\b</string>
 			<key>name</key>
 			<string>keyword.pure</string>
 		</dict>
@@ -41,6 +41,34 @@
 			<string>\b(if|then|else|otherwise)\b</string>
 			<key>name</key>
 			<string>keyword.control.pure</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b(int8|int16|int32|int64|char|bool|float|int|double|expr|short|long|void|string|pointer|matrix|dmatrix|cmatrix|imatrix)\b</string>
+			<key>name</key>
+			<string>storage.type.pure</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b(const|private|public|extern|namespace|nullary)\b</string>
+			<key>name</key>
+			<string>storage.modifier.pure</string>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>(using)\s+</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.pure</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>;\s*\n</string>
+			<key>name</key>
+			<string>meta.require.pure</string>
 		</dict>
 		<dict>
 			<key>comment</key>
@@ -131,13 +159,23 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.definition.comment.pure</string>
+					<string>entity.name.function.pure</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.term.pure</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.operator.pure</string>
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>(//).*$\n?</string>
+			<string>^(\S[\w:\(\),.]+)([\w \t:\(\),.]+)*(=)</string>
 			<key>name</key>
-			<string>comment.line.double-slash.pure</string>
+			<string>meta.term.lhs.pure</string>
 		</dict>
 		<dict>
 			<key>include</key>
@@ -147,15 +185,9 @@
 			<key>comment</key>
 			<string>My grasp of pure is not very strong, but I think it supports the same operators as Haskell</string>
 			<key>match</key>
-			<string>[|!%$?~+:\-.=&lt;/&gt;\\\*]+</string>
+			<string>[|&amp;!%$?~+:\-,^#.=&lt;/&gt;\\\*]+</string>
 			<key>name</key>
 			<string>keyword.operator.pure</string>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>,</string>
-			<key>name</key>
-			<string>punctuation.separator.comma.pure</string>
 		</dict>
 	</array>
 	<key>repository</key>
