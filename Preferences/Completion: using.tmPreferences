@@ -12,7 +12,7 @@
 		<string>#!/usr/bin/env ruby
     # Auto complete from lib/pure:
 		ptrn = /^#{Regexp.escape ENV["TM_CURRENT_WORD"].to_s}[^.]+\.pure/
-		puts Dir.new("/opt/local/lib/pure").grep(ptrn).map{|m| m.sub(".pure","")}.sort.join("\n")
+		puts Dir.new("/opt/local/lib/pure").grep(ptrn).map{|m| m.sub(".pure","")}.sort.join("\n")+"namespace"
 </string>
 	</dict>
 	<key>uuid</key>

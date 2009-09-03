@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>#!/usr/bin/env ruby
+require 'strscan'
+
+# Wonderfuly inefficent documentation lookup.
+word = ENV["TM_SELECTED_TEXT"] || ENV["TM_CURRENT_WORD"]
+found = false
+possible_files = Dir["/opt/local/lib/pure/**/*.pure"]
+possible_files.each do |path|
+  open(path,'r') do |io|
+    ss = StringScanner.new(io.read)
+    if ss.scan_until(/^\s+(\.\.\s+_#{word}:)\s*$/)
+      puts word
+      lines = (ss.scan_until(/\n\s*\n\s*(^\s+.. _)|(\*\/)/)).sub(/\n.+$/,'').split($/)
+      puts lines[0...(lines.length-1)]
+      found = true
+    end
+  end
+  exit if found
+end
+puts "No documenation for #{word}"</string>
+	<key>input</key>
+	<string>selection</string>
+	<key>keyEquivalent</key>
+	<string>^h</string>
+	<key>name</key>
+	<string>Show Documentation</string>
+	<key>output</key>
+	<string>showAsTooltip</string>
+	<key>scope</key>
+	<string>source.pure</string>
+	<key>uuid</key>
+	<string>0CD44568-FFB6-4C08-B1A6-76E569B73433</string>
+</dict>
+</plist>
