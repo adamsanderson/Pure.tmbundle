@@ -1,10 +1,13 @@
 Beware of the following:
-1. I do not know Pure
-2. This is a woefully inadequate bundle
+1. I do not really know Pure
+2. The syntax is not exactly right, I am taking some liberties to make it look good...
 
 The prior disclaimer aside, this should support a simple syntax for Pure,
-and a couple of useful commands.  Forks and contributions would be greatly
-appreciated.
+and a couple of useful commands. The help function (ctrl-h) is actually pretty 
+good, give it a try on anything documented
+in the pure library.
+
+Forks and contributions would be greatly appreciated.
 
   adam sanderson
   netghost@gmail.com
