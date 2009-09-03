@@ -10,12 +10,13 @@ require 'strscan'
 
 # Wonderfuly inefficent documentation lookup.
 word = ENV["TM_SELECTED_TEXT"] || ENV["TM_CURRENT_WORD"]
+escaped_word = Regexp.escape(word)
 found = false
 possible_files = Dir["/opt/local/lib/pure/**/*.pure"]
 possible_files.each do |path|
   open(path,'r') do |io|
     ss = StringScanner.new(io.read)
-    if ss.scan_until(/^\s+(\.\.\s+_#{word}:)\s*$/)
+    if ss.scan_until(/^\s+(\.\.\s+_#{escaped_word}:)\s*$/)
       puts word
       lines = (ss.scan_until(/\n\s*\n\s*(^\s+.. _)|(\*\/)/)).sub(/\n.+$/,'').split($/)
       puts lines[0...(lines.length-1)]
