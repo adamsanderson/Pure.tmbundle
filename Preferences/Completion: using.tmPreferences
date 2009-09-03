@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>name</key>
+	<string>Completion: using</string>
+	<key>scope</key>
+	<string>meta.require.pure</string>
+	<key>settings</key>
+	<dict>
+		<key>completionCommand</key>
+		<string>#!/usr/bin/env ruby
+    # Auto complete from lib/pure:
+		ptrn = /^#{Regexp.escape ENV["TM_CURRENT_WORD"].to_s}[^.]+\.pure/
+		puts Dir.new("/opt/local/lib/pure").grep(ptrn).map{|m| m.sub(".pure","")}.sort.join("\n")
+</string>
+	</dict>
+	<key>uuid</key>
+	<string>40ED775F-9E94-4171-8656-5FB343B47837</string>
+</dict>
+</plist>
