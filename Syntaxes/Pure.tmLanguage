@@ -195,7 +195,7 @@
 			<key>comment</key>
 			<string>My grasp of pure is not very strong, but I think it supports the same operators as Haskell and then some</string>
 			<key>match</key>
-			<string>([|&amp;!%$?~+:\-,^#.=&lt;/&gt;\\\*]+)|(and|or|not|div|mod)</string>
+			<string>([|&amp;!%$?~+:\-,^#.=&lt;/&gt;\\\*]+)|\b(and|or|not|div|mod)\b</string>
 			<key>name</key>
 			<string>keyword.operator.pure</string>
 		</dict>
